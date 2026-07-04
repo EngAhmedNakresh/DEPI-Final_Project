@@ -1,0 +1,332 @@
+/* ===== ROOT VARIABLES ===== */
+/* ===== LIGHT MODE ===== */
+:root {
+    --white: #ffffff;
+    /* مهم جدًا */
+
+    /* الخلفيات */
+    --auth-left-bg: var(--hero-bg);
+    /* نفس خلفية hero */
+    --auth-right-bg: #ffffff;
+
+    --testimonial-card-bg: rgba(0, 0, 0, 0.05);
+    --testimonial-text: #1f2937;
+    /* نصوص داكنة على الخلفيات الفاتحة */
+    --testimonial-user-name: #1e3a8a;
+    /* أزرق */
+    --testimonial-user-role: #2563eb;
+    /* أزرق فاتح */
+    --stars-color: #fbbf24;
+    /* أصفر للتقييمات */
+
+    /* Inputs */
+    --input-bg: #ffffff;
+    --input-border: #94a3b8;
+    --input-text: #1f2937;
+    --input-focus-border: #60a5fa;
+    --input-focus-shadow: rgba(99, 179, 237, 0.5);
+    --input-small-text: #6b7280;
+
+    /* Buttons */
+    --primary-btn-bg: linear-gradient(90deg, #93c5fd, #60a5fa);
+    --primary-btn-shadow: rgba(99, 179, 237, 0.5);
+
+    /* Links and text */
+    --login-link-text: #1e3a8a;
+    --login-link-hover: #2563eb;
+    --terms-text: #6b7280;
+
+    /* Divider */
+    --divider-bg: #cbd5e1;
+
+    /* Glow */
+    --left-glow: #60a5fa33;
+}
+
+/* ===== DARK MODE ===== */
+body.dark {
+    --auth-left-bg: radial-gradient(circle at 20% 30%, #0f172a, #0b1220 70%);
+    --auth-right-bg: linear-gradient(180deg, #0c1f30, #020617);
+
+    --testimonial-card-bg: rgba(255, 255, 255, 0.08);
+    --testimonial-text: #ffffff;
+    --testimonial-user-name: #ffffff;
+    --testimonial-user-role: #9fb3c8;
+    --stars-color: #ffc107;
+
+    --input-bg: #111827;
+    --input-border: #334155;
+    --input-text: #ffffff;
+    --input-focus-border: #3ea6ff;
+    --input-focus-shadow: rgba(62, 166, 255, 0.33);
+    --input-small-text: #6f8aa3;
+
+    --primary-btn-bg: linear-gradient(90deg, #2563eb, #0ea5e9);
+    --primary-btn-shadow: rgba(37, 99, 235, 0.5);
+
+    --login-link-text: #8ca3ba;
+    --login-link-hover: #3ea6ff;
+    --terms-text: #6f8aa3;
+
+    --divider-bg: #1e3448;
+
+    --left-glow: #3ea6ff33;
+}
+
+
+
+/* ===== PAGE ===== */
+.auth-page {
+  min-height: 100vh;
+  background: var(--auth-left-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--testimonial-text);
+}
+
+/* ===== CARD ===== */
+.auth-card {
+  width: 380px;
+  text-align: center;
+}
+
+/* ===== TEXT ===== */
+.auth-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--testimonial-text);
+  margin-bottom: 8px;
+}
+
+.auth-subtitle {
+  font-size: 14px;
+  color: var(--terms-text);
+  margin-bottom: 24px;
+}
+
+/* ===== DIVIDER ===== */
+.auth-divider {
+  height: 1px;
+  background: var(--divider-bg);
+  margin-bottom: 24px;
+}
+
+/* ===== FORM ===== */
+.auth-group {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.auth-group label {
+  font-size: 13px;
+  color: var(--testimonial-text);
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* ===== INPUT ===== */
+.auth-input {
+  position: relative;
+}
+
+.auth-input input {
+  width: 100%;
+  padding: 12px 40px 12px 12px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  color: var(--input-text);
+  outline: none;
+}
+
+.auth-input input::placeholder {
+  color: var(--input-small-text);
+}
+
+.auth-input input:focus {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 2px var(--input-focus-shadow);
+}
+
+.auth-input .icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: var(--input-small-text);
+  cursor: pointer;
+}
+
+.auth-group small {
+  font-size: 12px;
+  color: var(--input-small-text);
+  margin-top: 6px;
+  display: block;
+}
+
+/* ===== BUTTON ===== */
+.primary-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--primary-btn-bg);
+  border: none;
+  border-radius: 8px;
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 10px 25px var(--primary-btn-shadow);
+}
+
+.primary-btn:hover {
+  opacity: 0.95;
+}
+
+/* ===== FOOTER ===== */
+.auth-footer {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--terms-text);
+}
+
+.auth-footer a {
+  color: var(--login-link-text);
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  color: var(--login-link-hover);
+}
+
+
+/* ===== BACKGROUND ANIMATION ===== */
+.auth-page {
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-page::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: var(--left-glow);
+  filter: blur(80px);
+  top: -120px;
+  left: -120px;
+  animation: floatGlow 10s ease-in-out infinite;
+}
+
+@keyframes floatGlow {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(60px, 40px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+
+/* ===== CARD ENTER ===== */
+.auth-card {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== INPUT INTERACTION ===== */
+.auth-input input {
+  transition: border 0.25s ease, box-shadow 0.25s ease,
+    transform 0.15s ease;
+}
+
+.auth-input input:focus {
+  transform: scale(1.01);
+}
+
+/* ===== BUTTON ===== */
+.primary-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+}
+
+.primary-btn:active {
+  transform: scale(0.97);
+}
+
+.github-auth-btn {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.86);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.github-auth-btn:hover {
+  color: #fff;
+  background: #111827;
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+
+/* ===== ERROR STATE ===== */
+.auth-input.error input {
+  border-color: var(--login-link-hover);
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.auth-group small {
+  transition: color 0.2s ease;
+}

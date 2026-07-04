@@ -1,0 +1,548 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+/* ===== ROOT VARIABLES ===== */
+/* ===== LIGHT MODE ===== */
+:root {
+    --white: #ffffff;
+    /* مهم جدًا */
+
+    /* الخلفيات */
+    --auth-left-bg: var(--hero-bg);
+    /* نفس خلفية hero */
+    --auth-right-bg: #ffffff;
+
+    --testimonial-card-bg: rgba(0, 0, 0, 0.05);
+    --testimonial-text: #1f2937;
+    /* نصوص داكنة على الخلفيات الفاتحة */
+    --testimonial-user-name: #1e3a8a;
+    /* أزرق */
+    --testimonial-user-role: #2563eb;
+    /* أزرق فاتح */
+    --stars-color: #fbbf24;
+    /* أصفر للتقييمات */
+
+    /* Inputs */
+    --input-bg: #ffffff;
+    --input-border: #94a3b8;
+    --input-text: #1f2937;
+    --input-focus-border: #60a5fa;
+    --input-focus-shadow: rgba(99, 179, 237, 0.5);
+    --input-small-text: #6b7280;
+
+    /* Buttons */
+    --primary-btn-bg: linear-gradient(90deg, #93c5fd, #60a5fa);
+    --primary-btn-shadow: rgba(99, 179, 237, 0.5);
+
+    /* Links and text */
+    --login-link-text: #1e3a8a;
+    --login-link-hover: #2563eb;
+    --terms-text: #6b7280;
+
+    /* Divider */
+    --divider-bg: #cbd5e1;
+
+    /* Glow */
+    --left-glow: #60a5fa33;
+}
+
+/* ===== DARK MODE ===== */
+body.dark {
+    --auth-left-bg: radial-gradient(circle at 20% 30%, #0f172a, #0b1220 70%);
+    --auth-right-bg: linear-gradient(180deg, #0c1f30, #020617);
+
+    --testimonial-card-bg: rgba(255, 255, 255, 0.08);
+    --testimonial-text: #ffffff;
+    --testimonial-user-name: #ffffff;
+    --testimonial-user-role: #9fb3c8;
+    --stars-color: #ffc107;
+
+    --input-bg: #111827;
+    --input-border: #334155;
+    --input-text: #ffffff;
+    --input-focus-border: #3ea6ff;
+    --input-focus-shadow: rgba(62, 166, 255, 0.33);
+    --input-small-text: #6f8aa3;
+
+    --primary-btn-bg: linear-gradient(90deg, #2563eb, #0ea5e9);
+    --primary-btn-shadow: rgba(37, 99, 235, 0.5);
+
+    --login-link-text: #8ca3ba;
+    --login-link-hover: #3ea6ff;
+    --terms-text: #6f8aa3;
+
+    --divider-bg: #1e3448;
+
+    --left-glow: #3ea6ff33;
+}
+
+/* ========== Wrapper ========== */
+.auth-wrapper {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ================= LEFT ================= */
+.auth-left {
+    flex: 1;
+    background: var(--auth-left-bg);
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 100px;
+    color: var(--testimonial-user-name);
+}
+
+.auth-left::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: var(--left-glow);
+    filter: blur(120px);
+    top: -150px;
+    left: -150px;
+    animation: floatGlow 8s ease-in-out infinite;
+}
+
+@keyframes floatGlow {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(30px);
+    }
+}
+
+.left-content {
+    max-width: 520px;
+    animation: fadeSlide 1s ease forwards;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.brand {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    letter-spacing: -1px;
+}
+
+.hero-title {
+    font-size: 36px;
+    line-height: 1.4;
+    font-weight: 600;
+    margin-bottom: 60px;
+}
+
+.hero-title span {
+    color: var(--input-focus-border);
+}
+
+
+/* Testimonial */
+.testimonial-card {
+    background: var(--testimonial-card-bg);
+    backdrop-filter: blur(18px);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+}
+
+.stars {
+    color: var(--stars-color);
+    font-size: 18px;
+}
+
+.testimonial-card p {
+    margin: 25px 0;
+    color: var(--testimonial-text);
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.testimonial-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.testimonial-user img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.testimonial-user h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--testimonial-user-name);
+}
+
+.testimonial-user span {
+    font-size: 13px;
+    color: var(--testimonial-user-role);
+}
+
+.slider-dots {
+    margin-top: 25px;
+}
+
+.slider-dots span {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    background: #41586d;
+    border-radius: 50%;
+    margin-right: 6px;
+    transition: 0.3s;
+}
+
+.slider-dots .active {
+    background: var(--input-focus-border);
+}
+
+/* ================= RIGHT ================= */
+.auth-right {
+    flex: 1;
+    background: var(--auth-right-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    width: 420px;
+    color: var(--input-text);
+    position: relative;
+}
+
+.signup-home-link {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    text-decoration: none;
+    background: var(--input-bg);
+    color: var(--login-link-text);
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.signup-home-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    color: var(--login-link-hover);
+}
+
+.form-container h2 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.subtitle {
+    margin-top: 8px;
+    color: var(--login-link-text);
+    margin-bottom: 25px;
+}
+
+.divider {
+    height: 1px;
+    background: var(--divider-bg);
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--login-link-text);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 13px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    color: var(--input-text);
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 12px var(--input-focus-shadow);
+    outline: none;
+}
+
+.input-group small {
+    font-size: 12px;
+    color: var(--input-small-text);
+}
+
+.primary-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    background: var(--primary-btn-bg);
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--primary-btn-shadow);
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--login-link-text);
+}
+
+.login-link span {
+    color: var(--login-link-hover);
+    cursor: pointer;
+}
+
+.terms {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--terms-text);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .auth-wrapper {
+        flex-direction: column;
+    }
+
+    .auth-left {
+        padding: 60px 30px;
+    }
+
+    .auth-right {
+        padding: 40px 20px;
+    }
+}
+
+
+
+
+
+
+/* Wrapper */
+.auth-wrapper {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* LEFT & RIGHT */
+.auth-left, .auth-right {
+  flex: 1;
+  padding: 40px;
+}
+
+/* Margin for testimonial card (from left) */
+.testimonial-card {
+  margin-left: 15px; /* simple margin from left */
+}
+
+/* Responsive + scroll */
+@media (max-width: 992px) {
+  .auth-wrapper {
+    flex-direction: column;
+    min-height: auto;
+    overflow-y: auto;
+  }
+
+  /* Reverse order on mobile: form first, testimonial second */
+  .auth-right { order: 1; }
+  .auth-left { order: 2; }
+
+  .auth-left, .auth-right { width: 100%; padding: 20px; }
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff4d4f;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  animation: fadeInOut 3s forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, -20px);}
+  10%, 90% { opacity: 1; transform: translate(-50%, 0);}
+  100% { opacity: 0; transform: translate(-50%, -20px);}
+}
+
+/* Testimonials */
+.testimonial-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.testimonial-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+}
+
+/* Stars */
+.stars { color: #f5b50a; font-size: 18px; margin-bottom: 8px; }
+
+/* Slider dots */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.slider-dots span {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.slider-dots span.active {
+  background: #333;
+  transform: scale(1.2);
+}
+
+/* Form */
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; margin-bottom: 5px; }
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.primary-btn:hover { background-color: #555; }
+
+.github-auth-btn {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 6px;
+  background: #111827;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.github-auth-btn:hover {
+  color: #fff;
+  background: #0f172a;
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+/* ===== Responsive for Small Screens ===== */
+@media (max-width: 992px) {
+  .auth-wrapper {
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: auto; /* enable scroll */
+  }
+
+  /* ترتيب العناصر: form أولاً، testimonial بعده */
+  .auth-right { order: 1; }
+  .auth-left { order: 2; }
+
+  /* تعديل width و padding */
+  .auth-left,
+  .auth-right {
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* تحسين حجم النصوص */
+  .brand { font-size: 32px; margin-bottom: 40px; }
+  .hero-title { font-size: 26px; margin-bottom: 40px; }
+  .hero-title span { font-size: 26px; }
+
+  /* testimonial card تعديل padding ومسافة من اليسار */
+  .testimonial-card { padding: 25px; margin-left: 10px; }
+
+  /* testimonial text أصغر شوية */
+  .testimonial-card p { font-size: 14px; }
+
+  /* testimonial user image أصغر */
+  .testimonial-user img { width: 40px; height: 40px; }
+
+  /* form container أصغر */
+  .form-container { width: 100%; max-width: 400px; }
+
+  /* Inputs padding أصغر */
+  .input-group input { padding: 10px; }
+
+  /* button padding أصغر */
+  .primary-btn { padding: 12px; font-size: 14px; }
+}
